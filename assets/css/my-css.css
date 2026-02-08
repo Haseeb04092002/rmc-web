@@ -1,0 +1,606 @@
+/* ================= HERO FIX ================= */
+
+.hero-header {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;      /* vertical center */
+    justify-content: center;  /* horizontal center */
+
+    overflow: hidden;
+}
+
+/* Keep content above video */
+.hero-header .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Background video */
+/* .hero-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+} */
+
+
+
+
+
+/* .hero-header {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    background: transparent !important;
+} */
+
+/* VIDEO BACKGROUND */
+.hero-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    /* important */
+}
+
+/* OVERLAY */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.75),
+            rgba(40, 167, 69, 0.25)); */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.35)
+    );
+    z-index: 2;
+}
+
+/* CONTENT ABOVE VIDEO */
+.hero-header>.container {
+    position: relative;
+    z-index: 3;
+}
+
+/* REMOVE BACKGROUND FROM INNER CONTAINERS */
+.hero-header .container,
+.hero-header .row {
+    background: transparent !important;
+}
+
+
+
+
+
+
+/* ================= GLASS NAVBAR ================= */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.3) !important; /* transparent */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.3); */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional shadow on scroll / hover */
+/* .navbar:hover {
+    background: rgba(255, 255, 255, 0.75) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+} */
+
+/* ================= MENU ITEMS ================= */
+
+.navbar .nav-link {
+    position: relative;
+    font-weight: 600;
+    color: #222 !important;
+    padding: 8px 6px;
+    transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--bs-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 100%;
+}
+.navbar .nav-link,
+.navbar .nav-link{
+    color: var(--bs-secondary) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--bs-primary) !important;
+}
+
+/* ================= SEARCH ICON ================= */
+
+.navbar .btn-outline-success {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-success:hover {
+    background: var(--bs-primary);
+    color: #fff;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 991px) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: none;
+    }
+
+    .navbar .nav-link::after {
+        display: none;
+    }
+}
+/* Fixed navbar smooth behavior */
+.navbar.fixed-top {
+    transition: top 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Desktop slide-up effect */
+/* @media (min-width: 992px) {
+    .navbar.scrolled {
+        top: -55px;
+    }
+} */
+
+ /* Ensure fixed-top always works */
+.navbar.fixed-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+/* Mobile: no slide, only shadow */
+@media (max-width: 991px) {
+    .navbar.scrolled {
+        top: 0;
+    }
+}
+/* Ensure fixed-top always works */
+.navbar.fixed-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+/* Keep glass background even after scroll */
+/* .navbar.fixed-top,
+.navbar.fixed-top.scrolled {
+    background: rgb(255, 255, 255) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+} */
+/* When scrolled */
+
+
+
+
+
+
+.whatsapp-btn{
+    border-radius: 12px;
+    overflow: hidden;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.whatsapp-btn .wa-icon{
+    width: 46px;
+    font-size: 22px;
+    background: rgba(0,0,0,0.15); /* icon area */
+}
+
+.whatsapp-btn .wa-text{
+    height: 46px;
+    letter-spacing: 0.2px;
+}
+
+/* Hover effect */
+.whatsapp-btn:hover{
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+    transition: 0.2s ease;
+}
+
+
+
+
+
+
+
+.testimonial-nav button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+/* ================= TEAM SECTION ================= */
+
+.team-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+    height: 100%;
+}
+
+/* Image */
+.team-img {
+    position: relative;
+    overflow: hidden;
+}
+
+/* .team-img img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+} */
+
+/* ================= TEAM IMAGE CIRCLE ================= */
+
+.team-img {
+    width: 280px;
+    height: 280px;
+    margin: 30px auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+
+/* Adjust content spacing */
+.team-content {
+    padding-top: 20px;
+}
+
+/* Content */
+.team-content {
+    padding: 15px 10px 20px;
+}
+
+.team-content h4 {
+    font-weight: 700;
+}
+
+/* Social Icons */
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.team-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    .team-img img {
+        height: 260px;
+    }
+}
+
+
+
+
+
+
+
+
+/* ================= BADGE COUNTER ================= */
+
+.badge-counter {
+    position: relative;
+    padding: 35px 20px 45px;
+    border-radius: 16px 16px 50px 50px;
+    color: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.badge-counter::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 120%;
+    height: 60px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+/* Hover */
+.badge-counter:hover {
+    transform: translateY(-8px);
+}
+
+/* Number */
+.badge-counter h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+/* Label */
+.badge-counter p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Colors */
+.bg-yellow {
+    background: linear-gradient(135deg, #ffcc00, #ff9f00);
+}
+
+.bg-green {
+    background: linear-gradient(135deg, #7ad600, #4caf50);
+}
+
+.bg-teal {
+    background: linear-gradient(135deg, #009688, #00695c);
+}
+
+.bg-blue {
+    background: linear-gradient(135deg, #03a9f4, #0288d1);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .badge-counter h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 576px) {
+    .badge-counter {
+        padding: 30px 15px 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ================= COUNTRY BADGES ================= */
+
+.country-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.country-badges .badge {
+    background: #f1f1f1;
+    color: #333;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+}
+
+.country-badges .badge:hover {
+    background: var(--bs-primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Tabs styling */
+.nav-pills .nav-link {
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--bs-primary);
+}
+
+
+
+
+
+
+
+
+
+/* ================= QUOTE FORM ================= */
+
+.quote-form-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* Labels */
+.form-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #222;
+}
+
+/* Inputs */
+.form-control,
+.form-select {
+    border-radius: 8px;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: none;
+}
+
+/* Submit Button */
+.btn-submit {
+    background: #16a34a; /* clean green */
+    color: #fff;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 14px 50px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #128a3e;
+    transform: translateY(-2px);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .quote-form-card {
+        padding: 25px;
+    }
+}
+
+
+
+
+
+/* ================= QUOTE INTRO ================= */
+
+.quote-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #22c55e; /* green accent */
+}
+
+.quote-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #0f172a; /* dark blue/black */
+}
+
+/* Contact info */
+.quote-contact {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #22c55e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.contact-item h6 {
+    margin: 0;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .quote-title {
+        font-size: 30px;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+
